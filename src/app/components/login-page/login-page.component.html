@@ -4,17 +4,14 @@
             <h2 class="mb-4">Zaloguj się</h2>
             <div class="form-group">
                 <label for="inputEmail">Email</label>
-                <!-- <input type="email" class="form-control" [(ngModel)]="email"> -->
                 <input type="email" class="form-control" name="email" #email>
             </div>
             <div class="form-group">
                 <label for="inputPassword">Hasło</label>
                 <input type="password" class="form-control" name="password">
             </div>
-
             <div class="text-center mt-5">
                 <button type="submit" class="btn btn-dark form-control" (click)="onLogin(email.value)">Zaloguj</button>
-
                 <hr>
                 <small>Logując się, akceptujesz regulamin serwisu OLX.pl w jego aktualnym brzmieniu.</small>
             </div>
