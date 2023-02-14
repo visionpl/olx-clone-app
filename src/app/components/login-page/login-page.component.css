@@ -13,6 +13,6 @@
 }
 
 .login-box div {
-  width: 100vh;
+  width: 100vw;
   max-width: 400px;
 }
