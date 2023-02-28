@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --main-dark: #002f34;
+  --main-light: #f2f4f5;
+}
+
+/* * {
+  box-sizing: content-box;
+} */
+
+body {
+  color: var(--main-dark);
+  background: var(--main-light);
+}
+
+.btn-primary {
+  background-color: var(--main-light);
+  color: var(--main-dark);
+  border: 5px solid var(--main-light);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  border: 5px solid var(--main-light);
+  color: var(--main-light);
+}
+
+.background-dark {
+  background-color: var(--main-dark);
+}
