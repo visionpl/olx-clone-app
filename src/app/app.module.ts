@@ -11,9 +11,10 @@ import { SearchComponent } from './components/search/search.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { SingleCategoryComponent } from './components/categories/single-category/single-category.component';
 import { RandomOffersListComponent } from './components/random-offers-list/random-offers-list.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginPageComponent, MainComponent, SearchComponent, CategoriesComponent, SingleCategoryComponent, RandomOffersListComponent],
+  declarations: [AppComponent, HeaderComponent, LoginPageComponent, MainComponent, SearchComponent, CategoriesComponent, SingleCategoryComponent, RandomOffersListComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
