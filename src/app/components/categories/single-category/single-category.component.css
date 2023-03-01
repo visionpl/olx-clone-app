@@ -27,3 +27,10 @@ img {
   align-content: space-between;
   flex-wrap: wrap;
 }
+
+a.footer-links:link,
+:visited,
+:hover {
+  color: var(--main-dark);
+  text-decoration: none;
+}

@@ -1,0 +1,44 @@
+.random-offers-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.offer-box {
+  background-color: var(--white);
+  padding: 0.7rem;
+  border-radius: 3%;
+  margin: 5px 0;
+}
+
+img {
+  width: 240px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.offer-box-title {
+  font-size: 17px;
+  margin: 0.5rem 0;
+  max-width: 250px;
+  word-wrap: break-word;
+}
+
+.offer-box-details {
+  margin-top: 1rem;
+}
+
+.offer-box-district {
+  font-size: 12px;
+}
+
+.offer-box-price {
+  font-weight: 700;
+}
+
+a.footer-links:link,
+:visited,
+:hover {
+  color: var(--main-dark);
+  text-decoration: none;
+}
