@@ -1,1 +1,14 @@
-<p>single-category works!</p>
+<ul class="categories-list">
+    <li class="list-inline-item" *ngFor="let category of categories">
+        <div class="category-card">
+            <a href="#">
+                <div class="category-image">
+                    <img [src]="category.image">
+                </div>
+                <div class="category-title">
+                    <span>{{ category.name }} </span>
+                </div>
+            </a>
+        </div>
+    </li>
+</ul>

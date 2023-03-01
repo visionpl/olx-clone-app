@@ -1,0 +1,29 @@
+.category-card {
+  padding: 0 20px;
+}
+img {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.category-image {
+  display: flex;
+  justify-content: center;
+}
+.category-title {
+  padding: 1rem 0;
+  text-align: center;
+  text-decoration: none;
+  color: var(--main-dark);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.categories-list {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
