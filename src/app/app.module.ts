@@ -12,10 +12,11 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { SingleCategoryComponent } from './components/categories/single-category/single-category.component';
 import { RandomOffersListComponent } from './components/random-offers-list/random-offers-list.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, LoginPageComponent, MainComponent, SearchComponent, CategoriesComponent, SingleCategoryComponent, RandomOffersListComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })
