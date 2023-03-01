@@ -6,10 +6,8 @@
             </div>
             <div class="form-group col-md-3">
                 <select class="form-search">
-                    <option selected>Wybierz dzielnicę</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option selected [ngValue]="null">Wybierz dzielnicę</option>
+                    <option *ngFor="let district of districts" [ngValue]="district.id">{{ district.name }}</option>
                 </select>
             </div>
             <div class="form-group col-md-2">
