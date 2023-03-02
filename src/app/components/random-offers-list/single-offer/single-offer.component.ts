@@ -5,6 +5,12 @@ import { Component, Input } from '@angular/core';
   templateUrl: './single-offer.component.html',
   styleUrls: ['./single-offer.component.css'],
 })
-export class OfferBoxComponent {
-  @Input() randomOffer = [];
+export class SingleOfferComponent {
+  @Input() randomOfferItem = {
+    id: '',
+    name: '',
+    district: '',
+    price: '',
+    image: '',
+  };
 }

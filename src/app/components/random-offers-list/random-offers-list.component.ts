@@ -7,5 +7,5 @@ import { randomOffersList } from 'src/app/helpers/helper';
   styleUrls: ['./random-offers-list.component.css'],
 })
 export class RandomOffersListComponent {
-  randomOffers = randomOffersList;
+  randomOffersList = randomOffersList;
 }

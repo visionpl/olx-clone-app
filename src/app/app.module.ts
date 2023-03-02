@@ -13,7 +13,7 @@ import { SingleCategoryComponent } from './components/categories/single-category
 import { RandomOffersListComponent } from './components/random-offers-list/random-offers-list.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { OfferBoxComponent } from './components/random-offers-list/single-offer/single-offer.component';
+import { SingleOfferComponent } from './components/random-offers-list/single-offer/single-offer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { OfferBoxComponent } from './components/random-offers-list/single-offer/
     SingleCategoryComponent,
     RandomOffersListComponent,
     FooterComponent,
-    OfferBoxComponent,
+    SingleOfferComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],

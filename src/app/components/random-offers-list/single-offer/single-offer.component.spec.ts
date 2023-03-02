@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OfferBoxComponent } from './single-offer.component';
+import { SingleOfferComponent } from './single-offer.component';
 
-describe('OfferBoxComponent', () => {
-  let component: OfferBoxComponent;
-  let fixture: ComponentFixture<OfferBoxComponent>;
+describe('SingleOfferComponent', () => {
+  let component: SingleOfferComponent;
+  let fixture: ComponentFixture<SingleOfferComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [OfferBoxComponent],
+      declarations: [SingleOfferComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(OfferBoxComponent);
+    fixture = TestBed.createComponent(SingleOfferComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

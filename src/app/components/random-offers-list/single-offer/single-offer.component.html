@@ -1,20 +1,16 @@
-<ul class="random-offers-list">
-    <li class="list-inline-item" *ngFor="let randomOffers of randomOffer">
-        <a href="">
-            <div class="offer-box">
-                <div class="offer-box-image">
-                    <img [src]="randomOffers.image">
-                </div>
-                <div class="offer-box-title">
-                    <span>{{ randomOffers.name }}</span>
-                </div>
-                <div class="offer-box-details">
-                    <div class="offer-box-district">
-                        <span>{{ randomOffers.district }}</span>
-                    </div>
-                    <div class="offer-box-price">{{ randomOffers.price }} zł</div>
-                </div>
+<a href="">
+    <div class="offer-box">
+        <div class="offer-box-image">
+            <img [src]="randomOfferItem.image">
+        </div>
+        <div class="offer-box-title">
+            <span>{{ randomOfferItem.name }}</span>
+        </div>
+        <div class="offer-box-details">
+            <div class="offer-box-district">
+                <span>{{ randomOfferItem.district }}</span>
             </div>
-        </a>
-    </li>
-</ul>
+            <div class="offer-box-price">{{ randomOfferItem.price }} zł</div>
+        </div>
+    </div>
+</a>
