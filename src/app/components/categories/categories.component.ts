@@ -7,5 +7,5 @@ import { categoriesList } from 'src/app/helpers/helper';
   styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent {
-  category = categoriesList;
+  categoryList = categoriesList;
 }
