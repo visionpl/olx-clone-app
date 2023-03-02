@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CategoryItem } from 'src/app/interfaces/CategoryItem';
 
 @Component({
   selector: 'app-single-category',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./single-category.component.css'],
 })
 export class SingleCategoryComponent {
-  @Input() categoryItem = { name: '', image: '' };
+  @Input() categoryItem: CategoryItem;
 }
