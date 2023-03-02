@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./single-category.component.css'],
 })
 export class SingleCategoryComponent {
-  @Input() categories = [];
+  @Input() category = { name: '', image: '' };
 }
