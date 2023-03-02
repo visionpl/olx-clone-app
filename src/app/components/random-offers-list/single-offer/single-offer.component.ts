@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { OfferItem } from 'src/app/interfaces/OfferItem';
 
 @Component({
   selector: 'app-single-offer',
@@ -6,11 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./single-offer.component.css'],
 })
 export class SingleOfferComponent {
-  @Input() randomOfferItem = {
-    id: '',
-    name: '',
-    district: '',
-    price: '',
-    image: '',
-  };
+  @Input() randomOfferItem: OfferItem;
 }
