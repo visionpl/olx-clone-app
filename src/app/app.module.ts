@@ -7,10 +7,28 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { MainComponent } from './components/main/main.component';
+import { SearchComponent } from './components/search/search.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { SingleCategoryComponent } from './components/categories/single-category/single-category.component';
+import { RandomOffersListComponent } from './components/random-offers-list/random-offers-list.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SingleOfferComponent } from './components/random-offers-list/single-offer/single-offer.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginPageComponent, MainComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    LoginPageComponent,
+    MainComponent,
+    SearchComponent,
+    CategoriesComponent,
+    SingleCategoryComponent,
+    RandomOffersListComponent,
+    FooterComponent,
+    SingleOfferComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })

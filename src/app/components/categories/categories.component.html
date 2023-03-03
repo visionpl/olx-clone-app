@@ -1,0 +1,12 @@
+<div class="container-fluid bg-categories">
+    <div class="container pt-5 pb-5">
+        <h3 class="text-center mb-5">Kategorie główne</h3>
+        <div class="row">
+            <ul>
+                <li class="list-inline-item" *ngFor="let category of categoryList">
+                    <app-single-category [categoryItem]="category"></app-single-category>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

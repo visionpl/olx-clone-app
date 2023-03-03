@@ -1,19 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark background-dark">
     <div class="container">
-        <a class="navbar-brand" href="#"><img src="assets/logo.png" width="60px" alt="Logo"></a>
+        <a class="navbar-brand" href="#"><img src="assets/logo.png" class="logo" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto user-menu">
+                <li class="nav-item">
+                    <a class="nav-link active ml-3" routerLink="/">Wiadomości</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active ml-3" routerLink="/">Obserwowane</a>
+                </li>
                 <li class="nav-item" *ngIf="emailLogin; else notLoggedIn">
-                    <a class="nav-link active" routerLink="/">Twoje konto, {{emailLogin}}</a>
+                    <a class="nav-link active ml-3" routerLink="/">Twoje konto, {{emailLogin}}</a>
                 </li>
                 <ng-template #notLoggedIn>
-                    <a class="nav-link active" routerLink="/account">Zaloguj się</a>
+                    <a class="nav-link active ml-3" routerLink="/account">Zaloguj się</a>
                 </ng-template>
             </ul>
+            <button type="button" class="btn btn-primary ml-3">Dodaj ogłoszenie</button>
         </div>
     </div>
 </nav>

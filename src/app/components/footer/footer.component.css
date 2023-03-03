@@ -1,0 +1,17 @@
+a.footer-links:link,
+:visited {
+  color: var(--main-dark);
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+
+.footer-link-block > li {
+  margin-top: 5px;
+}
+
+fa-icon.social-icon {
+  color: var(--main-dark);
+  font-size: 2rem;
+  margin-right: 1rem;
+}
