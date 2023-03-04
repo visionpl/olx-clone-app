@@ -6,21 +6,44 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto user-menu">
+            <ul class="navbar-nav ml-auto user-menu" *ngIf="emailLogin; else notLoggedIn">
                 <li class="nav-item">
                     <a class="nav-link active ml-3" routerLink="/">Wiadomości</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active ml-3" routerLink="/">Obserwowane</a>
                 </li>
-                <li class="nav-item" *ngIf="emailLogin; else notLoggedIn">
-                    <a class="nav-link active ml-3" routerLink="/">Twoje konto, {{emailLogin}}</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active ml-3 dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLink="/">Twoje konto</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-item-logged-user">Zalogowano jako: <strong>{{emailLogin}} </strong>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" routerLink="/account">Wyloguj</a>
+                    </div>
                 </li>
-                <ng-template #notLoggedIn>
-                    <a class="nav-link active ml-3" routerLink="/account">Zaloguj się</a>
-                </ng-template>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary ml-3" routerLink="/add-offer">Dodaj ogłoszenie</button>
+                </li>
             </ul>
-            <button type="button" class="btn btn-primary ml-3">Dodaj ogłoszenie</button>
+            <ng-template #notLoggedIn>
+                <ul class="navbar-nav ml-auto user-menu">
+                    <li class="nav-item">
+                        <a class="nav-link active ml-3" routerLink="/">Wiadomości</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active ml-3" routerLink="/">Obserwowane</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active ml-3" routerLink="/account">Zaloguj się</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-primary ml-3" routerLink="/account">Dodaj
+                            ogłoszenie</button>
+                    </li>
+                </ul>
+            </ng-template>
         </div>
     </div>
 </nav>

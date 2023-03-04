@@ -3,3 +3,8 @@
   width: 100%;
   height: auto;
 }
+
+.dropdown-item-logged-user {
+  padding: 0.25rem 1.5rem;
+  white-space: nowrap;
+}
