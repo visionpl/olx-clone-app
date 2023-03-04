@@ -10,6 +10,18 @@ form {
   width: 100%;
 }
 
+input,
+select {
+  background: var(--main-light);
+  height: 3rem;
+  border: 0;
+}
+
+textarea {
+  background: var(--main-light);
+  border: 0;
+}
+
 .currency {
   padding-right: 16px;
   position: absolute;
