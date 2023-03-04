@@ -51,11 +51,9 @@
                     <label for="selectInputState">Stan*</label>
                     <select class="form-control" id="selectInputState" required>
                         <option selected="true" disabled="disabled">Wybierz stan</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option *ngFor="let state of stateList" [ngValue]="state">
+                            {{state.name}}</option>
+
                     </select>
                 </div>
             </div>

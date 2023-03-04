@@ -1,5 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { categoriesList, districtList } from 'src/app/helpers/helper';
+import {
+  categoriesList,
+  districtList,
+  offerState,
+} from 'src/app/helpers/helper';
 
 @Component({
   selector: 'app-add-offer',
@@ -7,11 +11,9 @@ import { categoriesList, districtList } from 'src/app/helpers/helper';
   styleUrls: ['./add-offer.component.css'],
 })
 export class AddOfferComponent {
-  @Input() categoryList = categoriesList;
-  selectedCategoryValue = null;
+  categoryList = categoriesList;
+  districtList = districtList;
+  stateList = offerState;
 
   emailLogin: string = localStorage.getItem('emailInput');
-
-  districtList = districtList;
-  selectedDistrictValue = null;
 }
