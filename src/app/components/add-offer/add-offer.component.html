@@ -1,20 +1,21 @@
 <app-header></app-header>
 <div class="container pt-5 pb-5">
     <h2 class="mb-4">Dodaj ogłoszenie</h2>
-    <form>
-        <div class="row add-offer-box">
+    <form #addOfferForm="ngForm" (ngSubmit)="addOffer(addOfferForm.value)">
+        <div class=" row add-offer-box">
             <div class="col-lg-8">
                 <h4>Im więcej szczegółów, tym lepiej!</h4>
                 <div class="form-group">
                     <label for="offerInputName">Tytuł ogłoszenia*</label>
                     <input type="text" class="form-control" placeholder="np. iPhone 11 na gwarancji" id="offerInputName"
-                        required>
+                        name="offerInputName" required ngModel>
                 </div>
                 <div class="form-group">
                     <label for="selectInputCategory">Kategoria*</label>
-                    <select class="form-control" id="selectInputCategory" required>
+                    <select class="form-control" id="selectInputCategory" name="selectInputCategory" required
+                        [(ngModel)]="selectInputCategorySelected">
                         <option selected="true" disabled="disabled">Wybierz kategorię</option>
-                        <option *ngFor="let category of categoryList" [ngValue]="category">
+                        <option *ngFor="let category of categoryList" [ngValue]="category.id">
                             {{category.name}}</option>
                     </select>
                 </div>
@@ -33,9 +34,9 @@
             <div class="col-lg-8">
                 <div class="form-group">
                     <label for="offerInputDescription">Opis*</label>
-                    <textarea class="form-control" id="offerInputDescription" rows="11"
+                    <textarea class="form-control" id="offerInputDescription" name="offerInputDescription" rows="11"
                         placeholder="Wpisz te informacje, które byłyby ważne dla Ciebie podczas przeglądania takiego ogłoszenia"
-                        required></textarea>
+                        required ngModel></textarea>
                 </div>
             </div>
         </div>
@@ -44,16 +45,17 @@
                 <h4>Informacje dodatkowe</h4>
                 <div class="form-group">
                     <label for="offerInputPrice">Cena*</label>
-                    <input type="text" class="form-control" id="offerInputPrice" required>
+                    <input type="text" class="form-control" id="offerInputPrice" name="offerInputPrice" required
+                        ngModel>
                     <span class="currency">zł</span>
                 </div>
                 <div class="form-group">
                     <label for="selectInputState">Stan*</label>
-                    <select class="form-control" id="selectInputState" required>
+                    <select class="form-control" id="selectInputState" name="selectInputState" required
+                        [(ngModel)]="selectInputStateSelected">
                         <option selected="true" disabled="disabled">Wybierz stan</option>
-                        <option *ngFor="let state of stateList" [ngValue]="state">
+                        <option *ngFor="let state of stateList" [ngValue]="state.id">
                             {{state.name}}</option>
-
                     </select>
                 </div>
             </div>
@@ -62,9 +64,10 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label for="selectInputDistrict">Dzielnica*</label>
-                    <select class="form-control" id="selectInputDistrict" required>
+                    <select class="form-control" id="selectInputDistrict" name="selectInputDistrict" required
+                        [(ngModel)]="districtListSelected">
                         <option selected="true" disabled="disabled">Wybierz dzielnice</option>
-                        <option *ngFor="let district of districtList" [ngValue]="district">{{district.name}}</option>
+                        <option *ngFor="let district of districtList" [ngValue]="district.id">{{district.name}}</option>
                     </select>
                 </div>
             </div>
@@ -74,20 +77,21 @@
                 <h4>Dane kontaktowe</h4>
                 <div class="form-group">
                     <label for="offerInputEmail">Adres e-mail</label>
-                    <input value="{{emailLogin}}" type="text" class="form-control" id="offerInputEmail" disabled>
+                    <input value="{{emailLogin}}" type="text" class="form-control" id="offerInputEmail"
+                        name="offerInputEmail" disabled ngModel>
                 </div>
                 <div class="form-group">
                     <label for="offerInputPhoneNumber">Numer telefonu</label>
-                    <input type="tel" class="form-control" id="offerInputPhoneNumber" required>
+                    <input type="tel" class="form-control" id="offerInputPhoneNumber" name="offerInputPhoneNumber"
+                        required ngModel>
                 </div>
             </div>
         </div>
-    </form>
-    <div class="row add-offer-box">
-        <div class="col-lg-12 text-right">
-            <button type="submit" class="btn btn-secondary ml-3">Dodaj ogłoszenie</button>
+        <div class="row add-offer-box">
+            <div class="col-lg-12 text-right">
+                <button type="submit" class="btn btn-secondary ml-3">Dodaj ogłoszenie</button>
+            </div>
         </div>
-    </div>
-
+    </form>
 </div>
 <app-footer></app-footer>

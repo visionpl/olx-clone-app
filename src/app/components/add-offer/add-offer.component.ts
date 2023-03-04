@@ -15,5 +15,13 @@ export class AddOfferComponent {
   districtList = districtList;
   stateList = offerState;
 
+  districtListSelected = null;
+  selectInputCategorySelected = null;
+  selectInputStateSelected = null;
+
   emailLogin: string = localStorage.getItem('emailInput');
+
+  addOffer(value: any) {
+    console.log(value);
+  }
 }
