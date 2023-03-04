@@ -13,11 +13,9 @@
                 <div class="form-group">
                     <label for="selectInputCategory">Kategoria*</label>
                     <select class="form-control" id="selectInputCategory" required>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option selected="true" disabled="disabled">Wybierz kategorię</option>
+                        <option *ngFor="let category of categoryList" [ngValue]="category">
+                            {{category.name}}</option>
                     </select>
                 </div>
             </div>
@@ -52,6 +50,7 @@
                 <div class="form-group">
                     <label for="selectInputState">Stan*</label>
                     <select class="form-control" id="selectInputState" required>
+                        <option selected="true" disabled="disabled">Wybierz stan</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -66,11 +65,8 @@
                 <div class="form-group">
                     <label for="selectInputDistrict">Dzielnica*</label>
                     <select class="form-control" id="selectInputDistrict" required>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option selected="true" disabled="disabled">Wybierz dzielnice</option>
+                        <option *ngFor="let district of districtList" [ngValue]="district">{{district.name}}</option>
                     </select>
                 </div>
             </div>
@@ -80,7 +76,7 @@
                 <h4>Dane kontaktowe</h4>
                 <div class="form-group">
                     <label for="offerInputEmail">Adres e-mail</label>
-                    <input type="text" class="form-control" id="offerInputEmail" disabled>
+                    <input value="{{emailLogin}}" type="text" class="form-control" id="offerInputEmail" disabled>
                 </div>
                 <div class="form-group">
                     <label for="offerInputPhoneNumber">Numer telefonu</label>
