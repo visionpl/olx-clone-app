@@ -1,0 +1,19 @@
+.add-offer-box {
+  background: var(--white);
+  border-radius: var(--default-radius);
+  padding: 2rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+form {
+  width: 100%;
+}
+
+.currency {
+  padding-right: 16px;
+  position: absolute;
+  right: 10px;
+  top: 42%;
+  transform: translateY(-50%);
+}
