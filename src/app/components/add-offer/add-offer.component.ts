@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import {
   categoriesList,
   districtList,
@@ -21,7 +22,9 @@ export class AddOfferComponent {
 
   emailLogin: string = localStorage.getItem('emailInput');
 
-  addOffer(value: any) {
-    console.log(value);
+  addOffer(form: NgForm) {
+    localStorage.setItem('form-data', JSON.stringify(form.value));
+    let formValue = JSON.parse(localStorage.getItem('form-data'));
+    console.log(formValue);
   }
 }
