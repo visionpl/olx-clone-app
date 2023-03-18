@@ -62,6 +62,6 @@ export class AddOfferComponent {
     offersArray.push(formData);
     localStorage.setItem('offers', JSON.stringify(offersArray));
 
-    this.router.navigate(['/']);
+    this.router.navigate(['offer-added-successfully']);
   }
 }
