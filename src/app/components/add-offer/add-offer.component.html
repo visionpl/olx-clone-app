@@ -1,23 +1,33 @@
 <app-header></app-header>
 <div class="container pt-5 pb-5">
     <h2 class="mb-4">Dodaj ogłoszenie</h2>
-    <form #addOfferForm="ngForm" (ngSubmit)="addOffer(addOfferForm)">
+    <form [formGroup]="form" (ngSubmit)="addOffer(form.value)">
         <div class=" row add-offer-box">
             <div class="col-lg-8">
                 <h4>Im więcej szczegółów, tym lepiej!</h4>
                 <div class="form-group">
                     <label for="offerName">Tytuł ogłoszenia*</label>
-                    <input type="text" class="form-control" placeholder="np. iPhone 11 na gwarancji" id="offerName"
-                        name="offerName" required ngModel>
+                    <input type="text" formControlName="offerName" class="form-control"
+                        placeholder="np. iPhone 11 na gwarancji" id="offerName" name="offerName">
+                    <p class="form-error"
+                        *ngIf="form.controls['offerName'].touched && form.get('offerName').hasError('required')">
+                        Tytuł jest najważniejszy, nie zapomnij o nim
+                    </p>
+                    <p class="form-error"
+                        *ngIf="form.controls['offerName'].touched && form.controls['offerName'].hasError('maxlength')">
+                        Tytuł musi mieć mniej niż 70 znaków
+                    </p>
                 </div>
-                <div class="form-group">
+                <div class=" form-group">
                     <label for="category">Kategoria*</label>
-                    <select class="form-control" id="category" name="category" required
-                        [(ngModel)]="selectInputCategorySelected">
-                        <option selected="true" disabled="disabled">Wybierz kategorię</option>
+                    <select formControlName="category" class="form-control" id="category" name="category">
                         <option *ngFor="let category of categoryList" [ngValue]="category.id">
                             {{category.name}}</option>
                     </select>
+                    <p class="form-error"
+                        *ngIf="form.controls['category'].touched && form.get('category').hasError('required')">
+                        Kategoria jest wymagana!
+                    </p>
                 </div>
             </div>
         </div>
@@ -34,9 +44,28 @@
             <div class="col-lg-8">
                 <div class="form-group">
                     <label for="description">Opis*</label>
-                    <textarea class="form-control" id="description" name="description" rows="11"
-                        placeholder="Wpisz te informacje, które byłyby ważne dla Ciebie podczas przeglądania takiego ogłoszenia"
-                        required ngModel></textarea>
+                    <textarea formControlName="description" #description class="form-control" id="description"
+                        name="description" rows="11"
+                        placeholder="Wpisz te informacje, które byłyby ważne dla Ciebie podczas przeglądania takiego ogłoszenia"></textarea>
+                    <div class="description-info">
+                        <span *ngIf="description.value.length < MIN_DESCRIPTION_LENGHT" class="text-muted">Wpisz
+                            jeszcze
+                            przynajmniej {{ MIN_DESCRIPTION_LENGHT }} znaków</span>
+                        <span class="text-muted">{{description.value.length}}/{{ MAX_DESCRIPTION_LENGHT }}
+                            characters</span>
+                    </div>
+                    <p class="form-error"
+                        *ngIf="form.controls['description'].touched && form.get('description').hasError('minlength')">
+                        Minimalna długość opisu to 80 znaków.
+                    </p>
+                    <p class="form-error"
+                        *ngIf="form.controls['description'].touched && form.controls['description'].hasError('maxlength')">
+                        Maksymalna długość opisu to 9000 znaków.
+                    </p>
+                    <p class="form-error"
+                        *ngIf="form.controls['description'].touched && form.get('description').hasError('required')">
+                        Opis jest wymagany!
+                    </p>
                 </div>
             </div>
         </div>
@@ -45,17 +74,27 @@
                 <h4>Informacje dodatkowe</h4>
                 <div class="form-group">
                     <label for="price">Cena*</label>
-                    <input type="text" class="form-control" id="price" name="price" required ngModel>
+                    <input formControlName="price" type="number" class="form-control" id="price" name="price">
                     <span class="currency">zł</span>
+                    <p class="form-error"
+                        *ngIf="form.controls['price'].touched && form.controls['price'].hasError('min')">
+                        Prawidłowa cena musi być wyższa niż 0 zł.
+                    </p>
+                    <p class="form-error"
+                        *ngIf="form.controls['price'].touched && form.get('price').hasError('required')">
+                        Cena jest niezbędna do dodania ogłoszenia!
+                    </p>
                 </div>
                 <div class="form-group">
                     <label for="state">Stan*</label>
-                    <select class="form-control" id="state" name="state" required
-                        [(ngModel)]="selectInputStateSelected">
-                        <option selected="true" disabled="disabled">Wybierz stan</option>
+                    <select formControlName="state" class="form-control" id="state" name="state">
                         <option *ngFor="let state of stateList" [ngValue]="state.id">
                             {{state.name}}</option>
                     </select>
+                    <p class="form-error"
+                        *ngIf="form.controls['state'].touched && form.get('state').hasError('required')">
+                        Stan oferowanego przedmiotu jest wymagany!
+                    </p>
                 </div>
             </div>
         </div>
@@ -63,11 +102,13 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label for="district">Dzielnica*</label>
-                    <select class="form-control" id="district" name="district" required
-                        [(ngModel)]="districtListSelected">
-                        <option selected="true" disabled="disabled">Wybierz dzielnice</option>
+                    <select formControlName="district" class="form-control" id="district" name="district">
                         <option *ngFor="let district of districtList" [ngValue]="district.id">{{district.name}}</option>
                     </select>
+                    <p class="form-error"
+                        *ngIf="form.controls['district'].touched && form.get('district').hasError('required')">
+                        Podanie dzielnicy jest niezbędne!
+                    </p>
                 </div>
             </div>
         </div>
@@ -76,18 +117,26 @@
                 <h4>Dane kontaktowe</h4>
                 <div class="form-group">
                     <label for="email">Adres e-mail</label>
-                    <input [value]="emailLogin" type="text" class="form-control" id="email" name="email"
-                        [(ngModel)]="emailLogin" disabled>
+                    <input formControlName="email" type="text" class="form-control" id="email" name="email">
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">Numer telefonu</label>
-                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required ngModel>
+                    <input formControlName="phoneNumber" type="tel" class="form-control" id="phoneNumber"
+                        name="phoneNumber">
+                    <p class="form-error"
+                        *ngIf="form.controls['phoneNumber'].touched && form.get('phoneNumber').hasError('pattern')">
+                        Numer telefonu nie jest prawidłowy!
+                    </p>
+                    <p class="form-error"
+                        *ngIf="form.controls['phoneNumber'].touched && form.get('phoneNumber').hasError('required')">
+                        Numer telefonu jest wymagany do dodania ogłoszenia!
+                    </p>
                 </div>
             </div>
         </div>
         <div class="row add-offer-box">
             <div class="col-lg-12 text-right">
-                <button type="submit" class="btn btn-secondary ml-3" [disabled]="!addOfferForm.valid">Dodaj
+                <button type="submit" class="btn btn-secondary ml-3" [disabled]="!form.valid">Dodaj
                     ogłoszenie</button>
             </div>
         </div>

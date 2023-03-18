@@ -29,3 +29,27 @@ textarea {
   top: 42%;
   transform: translateY(-50%);
 }
+
+input.ng-touched.ng-invalid {
+  background-clip: padding-box;
+  background-color: rgb(242, 244, 245);
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(242, 244, 245) rgb(242, 244, 245) rgb(255, 86, 54);
+}
+
+p.form-error {
+  font-size: 14px;
+  line-height: 18px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin: 0px;
+  color: rgb(255, 86, 54);
+}
+
+.description-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding-top: 1rem;
+}
