@@ -46,8 +46,17 @@ export class AddOfferComponent {
   });
 
   onAddOffer(form: any) {
-    localStorage.setItem('offers', JSON.stringify(form));
-    let formValue = JSON.parse(localStorage.getItem('offers'));
-    console.log(formValue);
+    let offersArray;
+    offersArray = JSON.parse(localStorage.getItem('offers'));
+
+    if (offersArray == null) {
+      offersArray = [];
+    }
+
+    const id = Math.floor(Math.random() * 100);
+    const formData = { id, form };
+
+    offersArray.push(formData);
+    localStorage.setItem('offers', JSON.stringify(offersArray));
   }
 }
