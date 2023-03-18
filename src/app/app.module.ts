@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SingleOfferComponent } from './components/random-offers-list/single-offer/single-offer.component';
 import { AddOfferComponent } from './components/add-offer/add-offer.component';
+import { OfferAddedSuccessfullyComponent } from './components/offer-added-successfully/offer-added-successfully.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AddOfferComponent } from './components/add-offer/add-offer.component';
     FooterComponent,
     SingleOfferComponent,
     AddOfferComponent,
+    OfferAddedSuccessfullyComponent,
   ],
   imports: [
     BrowserModule,

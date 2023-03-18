@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import {
   categoriesList,
   districtList,
@@ -12,6 +13,8 @@ import {
   styleUrls: ['./add-offer.component.css'],
 })
 export class AddOfferComponent {
+  constructor(private router: Router) {}
+
   MIN_VALUE = 0.01;
   MIN_DESCRIPTION_LENGHT = 80;
   MAX_DESCRIPTION_LENGHT = 9000;
@@ -58,5 +61,7 @@ export class AddOfferComponent {
 
     offersArray.push(formData);
     localStorage.setItem('offers', JSON.stringify(offersArray));
+
+    this.router.navigate(['/']);
   }
 }

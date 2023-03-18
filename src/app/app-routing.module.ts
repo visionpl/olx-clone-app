@@ -4,11 +4,16 @@ import { AddOfferComponent } from './components/add-offer/add-offer.component';
 
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { MainComponent } from './components/main/main.component';
+import { OfferAddedSuccessfullyComponent } from './components/offer-added-successfully/offer-added-successfully.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'account', component: LoginPageComponent },
   { path: 'add-offer', component: AddOfferComponent },
+  {
+    path: 'offer-added-successfully',
+    component: OfferAddedSuccessfullyComponent,
+  },
 ];
 
 @NgModule({
