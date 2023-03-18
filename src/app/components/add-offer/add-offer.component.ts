@@ -27,28 +27,27 @@ export class AddOfferComponent {
       Validators.required,
     ]),
     category: new FormControl('', Validators.required),
-    description: new FormControl('opis', [
+    description: new FormControl('', [
       Validators.minLength(this.MIN_DESCRIPTION_LENGHT),
       Validators.maxLength(this.MAX_DESCRIPTION_LENGHT),
       Validators.required,
     ]),
-    price: new FormControl('256', [
+    price: new FormControl('', [
       Validators.required,
       Validators.min(Number.MIN_VALUE),
     ]),
     state: new FormControl('', Validators.required),
     district: new FormControl('', Validators.required),
-    phoneNumber: new FormControl('696399114', [
+    phoneNumber: new FormControl('', [
       Validators.required,
       Validators.pattern('[0-9 ]{9}'),
     ]),
     email: new FormControl({ value: this.emailLogin, disabled: true }),
   });
 
-    onAddOffer(form: any) {
-    // localStorage.setItem('form-data', JSON.stringify(form.value));
-    // let formValue = JSON.parse(localStorage.getItem('form-data'));
-    // console.log(formValue);
-    console.log(this.form.value);
+  onAddOffer(form: any) {
+    localStorage.setItem('offers', JSON.stringify(form));
+    let formValue = JSON.parse(localStorage.getItem('offers'));
+    console.log(formValue);
   }
 }
