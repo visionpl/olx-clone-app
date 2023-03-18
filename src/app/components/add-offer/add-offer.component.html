@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="container pt-5 pb-5">
     <h2 class="mb-4">Dodaj ogłoszenie</h2>
-    <form [formGroup]="form" (ngSubmit)="addOffer(form.value)">
+    <form [formGroup]="form" (ngSubmit)="onAddOffer(form.value)">
         <div class=" row add-offer-box">
             <div class="col-lg-8">
                 <h4>Im więcej szczegółów, tym lepiej!</h4>

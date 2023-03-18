@@ -45,7 +45,7 @@ export class AddOfferComponent {
     email: new FormControl({ value: this.emailLogin, disabled: true }),
   });
 
-  addOffer(form: any) {
+    onAddOffer(form: any) {
     // localStorage.setItem('form-data', JSON.stringify(form.value));
     // let formValue = JSON.parse(localStorage.getItem('form-data'));
     // console.log(formValue);
