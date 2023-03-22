@@ -48,10 +48,10 @@
                         name="description" rows="11"
                         placeholder="Wpisz te informacje, które byłyby ważne dla Ciebie podczas przeglądania takiego ogłoszenia"></textarea>
                     <div class="description-info">
-                        <span *ngIf="description.value.length < MIN_DESCRIPTION_LENGHT" class="text-muted">Wpisz
+                        <span *ngIf="description.value.length < minDescriptionLength" class="text-muted">Wpisz
                             jeszcze
-                            przynajmniej {{ MIN_DESCRIPTION_LENGHT }} znaków</span>
-                        <span class="text-muted">{{description.value.length}}/{{ MAX_DESCRIPTION_LENGHT }}
+                            przynajmniej {{ minDescriptionLength }} znaków</span>
+                        <span class="text-muted">{{description.value.length}}/{{ maxDescriptionLength }}
                             characters</span>
                     </div>
                     <p class="form-error"

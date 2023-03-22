@@ -183,3 +183,7 @@ export const offerState = [
   { id: 2, name: 'Nowe' },
   { id: 3, name: 'Uszkodzone' },
 ];
+
+export const MIN_VALUE_PRICE = 0.01;
+export const MIN_DESCRIPTION_LENGHT = 80;
+export const MAX_DESCRIPTION_LENGHT = 9000;

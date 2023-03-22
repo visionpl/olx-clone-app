@@ -5,6 +5,9 @@ import {
   categoriesList,
   districtList,
   offerState,
+  MIN_DESCRIPTION_LENGHT,
+  MAX_DESCRIPTION_LENGHT,
+  MIN_VALUE_PRICE,
 } from 'src/app/helpers/helper';
 
 @Component({
@@ -15,9 +18,8 @@ import {
 export class AddOfferComponent {
   constructor(private router: Router) {}
 
-  MIN_VALUE = 0.01;
-  MIN_DESCRIPTION_LENGHT = 80;
-  MAX_DESCRIPTION_LENGHT = 9000;
+  minDescriptionLength = MIN_DESCRIPTION_LENGHT;
+  maxDescriptionLength = MAX_DESCRIPTION_LENGHT;
 
   emailLogin: string = localStorage.getItem('emailInput');
   categoryList = categoriesList;
@@ -31,13 +33,13 @@ export class AddOfferComponent {
     ]),
     category: new FormControl('', Validators.required),
     description: new FormControl('', [
-      Validators.minLength(this.MIN_DESCRIPTION_LENGHT),
-      Validators.maxLength(this.MAX_DESCRIPTION_LENGHT),
+      Validators.minLength(MIN_DESCRIPTION_LENGHT),
+      Validators.maxLength(MAX_DESCRIPTION_LENGHT),
       Validators.required,
     ]),
     price: new FormControl('', [
       Validators.required,
-      Validators.min(Number.MIN_VALUE),
+      Validators.min(MIN_VALUE_PRICE),
     ]),
     state: new FormControl('', Validators.required),
     district: new FormControl('', Validators.required),
