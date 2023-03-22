@@ -50,14 +50,10 @@
                     <div class="description-info">
                         <span *ngIf="description.value.length < minDescriptionLength" class="text-muted">Wpisz
                             jeszcze
-                            przynajmniej {{ minDescriptionLength }} znaków</span>
+                            przynajmniej {{ minDescriptionLength - description.value.length }} znaków</span>
                         <span class="text-muted">{{description.value.length}}/{{ maxDescriptionLength }}
                             characters</span>
                     </div>
-                    <p class="form-error"
-                        *ngIf="form.controls['description'].touched && form.get('description').hasError('minlength')">
-                        Minimalna długość opisu to 80 znaków.
-                    </p>
                     <p class="form-error"
                         *ngIf="form.controls['description'].touched && form.controls['description'].hasError('maxlength')">
                         Maksymalna długość opisu to 9000 znaków.
