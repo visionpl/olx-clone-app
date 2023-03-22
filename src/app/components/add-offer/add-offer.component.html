@@ -72,10 +72,12 @@
         <div class="row white-background-box">
             <div class="col-lg-4">
                 <h4>Informacje dodatkowe</h4>
-                <div class="form-group">
-                    <label for="price">Cena*</label>
-                    <input formControlName="price" type="number" class="form-control" id="price" name="price">
-                    <span class="currency">zł</span>
+                <label for="price">Cena*</label>
+                <div class="input-group">
+                    <input formControlName="price" type="number" class="form-control " id="price" name="price">
+                    <div class="input-group-append">
+                        <span class="currency">zł</span>
+                    </div>
                     <p class="form-error"
                         *ngIf="form.controls['price'].touched && form.controls['price'].hasError('min')">
                         Prawidłowa cena musi być wyższa niż 0 zł.
