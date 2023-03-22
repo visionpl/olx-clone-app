@@ -30,7 +30,7 @@ body {
   font-weight: 600;
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover:not([disabled]) {
   background-color: transparent;
   border: 5px solid var(--main-dark);
   color: var(--main-dark);
