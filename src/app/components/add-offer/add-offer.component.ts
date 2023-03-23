@@ -26,44 +26,51 @@ export class AddOfferComponent {
   districtList = districtList;
   stateList = offerState;
 
-  form = new FormGroup({
-    offerName: new FormControl('', [
-      Validators.maxLength(70),
-      Validators.required,
-    ]),
-    category: new FormControl('', Validators.required),
-    description: new FormControl('', [
-      Validators.minLength(MIN_DESCRIPTION_LENGHT),
-      Validators.maxLength(MAX_DESCRIPTION_LENGHT),
-      Validators.required,
-    ]),
-    price: new FormControl('', [
-      Validators.required,
-      Validators.min(MIN_VALUE_PRICE),
-    ]),
-    state: new FormControl('', Validators.required),
-    district: new FormControl('', Validators.required),
-    phoneNumber: new FormControl('', [
-      Validators.required,
-      Validators.pattern('[0-9 ]{9}'),
-    ]),
-    email: new FormControl({ value: this.emailLogin, disabled: true }),
-  });
+  form = new FormGroup(
+    {
+      offerName: new FormControl('', [
+        Validators.maxLength(70),
+        Validators.required,
+      ]),
+      category: new FormControl('', Validators.required),
+      description: new FormControl('', [
+        Validators.minLength(MIN_DESCRIPTION_LENGHT),
+        Validators.maxLength(MAX_DESCRIPTION_LENGHT),
+        Validators.required,
+      ]),
+      price: new FormControl('', [
+        Validators.required,
+        Validators.min(MIN_VALUE_PRICE),
+      ]),
+      state: new FormControl('', Validators.required),
+      district: new FormControl('', Validators.required),
+      phoneNumber: new FormControl('', [
+        Validators.required,
+        Validators.pattern('[0-9 ]{9}'),
+      ]),
+      email: new FormControl({ value: this.emailLogin, disabled: true }),
+    },
+    { updateOn: 'submit' }
+  );
 
   onAddOffer(form: any) {
-    let offersArray;
-    offersArray = JSON.parse(localStorage.getItem('offers'));
+    if (this.form.valid) {
+      let offersArray;
+      offersArray = JSON.parse(localStorage.getItem('offers'));
 
-    if (offersArray == null) {
-      offersArray = [];
+      if (offersArray == null) {
+        offersArray = [];
+      }
+
+      const id = Math.floor(Math.random() * 100);
+      const formData = { id, form };
+
+      offersArray.push(formData);
+      localStorage.setItem('offers', JSON.stringify(offersArray));
+
+      this.router.navigate(['offer-added-successfully']);
+    } else {
+      this.form.markAllAsTouched();
     }
-
-    const id = Math.floor(Math.random() * 100);
-    const formData = { id, form };
-
-    offersArray.push(formData);
-    localStorage.setItem('offers', JSON.stringify(offersArray));
-
-    this.router.navigate(['offer-added-successfully']);
   }
 }
