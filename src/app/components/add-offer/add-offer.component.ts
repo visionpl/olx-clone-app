@@ -62,10 +62,7 @@ export class AddOfferComponent {
         offersArray = [];
       }
 
-      const id = Math.floor(Math.random() * 100);
-      const formData = { id, form };
-
-      offersArray.push(formData);
+      offersArray.push(form);
       localStorage.setItem('offers', JSON.stringify(offersArray));
 
       this.router.navigate(['offer-added-successfully']);
