@@ -8,4 +8,5 @@ import { OfferItem } from 'src/app/interfaces/OfferItem';
 })
 export class SingleOfferComponent {
   @Input() randomOfferItem: OfferItem;
+  // @Input() randomOfferItem;
 }
