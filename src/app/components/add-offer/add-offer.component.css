@@ -27,12 +27,13 @@ textarea {
   background-color: var(--main-light);
 }
 
-input.ng-touched.ng-invalid {
+input.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid,
+textarea.ng-touched.ng-invalid {
   background-clip: padding-box;
-  background-color: rgb(242, 244, 245);
   border-width: 2px;
   border-style: solid;
-  border-color: rgb(242, 244, 245) rgb(242, 244, 245) rgb(255, 86, 54);
+  border-color: var(--main-light) var(--main-light) var(--red);
 }
 
 p.form-error {
@@ -41,7 +42,7 @@ p.form-error {
   padding-top: 6px;
   padding-bottom: 6px;
   margin: 0px;
-  color: rgb(255, 86, 54);
+  color: var(--red);
 }
 
 .description-info {
