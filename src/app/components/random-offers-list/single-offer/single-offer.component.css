@@ -23,6 +23,20 @@ img {
 
 .offer-box-details {
   margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.offer-box-details .detail {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.offer-box-details .fav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
 }
 
 .offer-box-district {
