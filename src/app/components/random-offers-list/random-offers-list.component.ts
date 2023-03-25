@@ -9,19 +9,20 @@ export class RandomOffersListComponent implements OnInit {
   randomOffersList = [];
 
   ngOnInit() {
-    this.randomOffersList = this.getRandomOffers(8);
+    const randomOffers = JSON.parse(localStorage.getItem('offers'));
+    const count = Math.min(8, randomOffers.length);
+    this.randomOffersList = this.getRandomOffers(count, randomOffers);
   }
 
-  getRandomOffers(count: number): string[] {
-    const randomOffers = JSON.parse(localStorage.getItem('offers'));
+  getRandomOffers(count: number, offers: string[]): string[] {
     const randomIndexes = [];
-
-    while (randomIndexes.length < count) {
-      const randomIndex = Math.floor(Math.random() * randomOffers.length);
-      if (!randomIndexes.includes(randomIndex)) {
-        randomIndexes.push(randomIndex);
+    for (let i = 0; i < count; i++) {
+      let randomIndex = Math.floor(Math.random() * offers.length);
+      while (randomIndexes.includes(randomIndex)) {
+        randomIndex = Math.floor(Math.random() * offers.length);
       }
+      randomIndexes.push(randomIndex);
     }
-    return randomIndexes.map((index) => randomOffers[index]);
+    return randomIndexes.map((index) => offers[index]);
   }
 }
