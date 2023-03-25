@@ -12,12 +12,11 @@
 }
 
 img {
-  width: 240px;
-  height: 150px;
   object-fit: cover;
 }
 
 .offer-box-title {
+  display: felx;
   font-size: 17px;
   margin: 0.5rem 0;
   max-width: 250px;

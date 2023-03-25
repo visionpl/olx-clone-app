@@ -1,33 +1,14 @@
-<!-- <a href="">
-    <div class="offer-box">
-        <div class="offer-box-image">
-            <img [src]="randomOfferItem.image">
-        </div>
-        <div class="offer-box-title">
-            <span>{{ randomOfferItem.name }}</span>
-        </div>
-        <div class="offer-box-details">
-            <div class="offer-box-district">
-                <span>{{ randomOfferItem.district }}</span>
-            </div>
-            <div class="offer-box-price">{{ randomOfferItem.price }} zł</div>
-        </div>
-    </div>
-</a> -->
-
 <a href="">
-    <div class="offer-box">
-        <div class="offer-box-image">
-            <img [src]="randomOfferItem?.image">
+    <div class="offer-box-image">
+        <img class="img-fluid" [src]="randomOfferItem?.image">
+    </div>
+    <div class="offer-box-title">
+        <span>{{ randomOfferItem.offerName }}</span>
+    </div>
+    <div class="offer-box-details">
+        <div class="offer-box-district">
+            <span>{{ randomOfferItem.district }}</span>
         </div>
-        <div class="offer-box-title">
-            <span>{{ randomOfferItem.offerName }}</span>
-        </div>
-        <div class="offer-box-details">
-            <div class="offer-box-district">
-                <span>{{ randomOfferItem.district }}</span>
-            </div>
-            <div class="offer-box-price">{{ randomOfferItem.price }} zł</div>
-        </div>
+        <div class="offer-box-price">{{ randomOfferItem.price }} zł</div>
     </div>
 </a>

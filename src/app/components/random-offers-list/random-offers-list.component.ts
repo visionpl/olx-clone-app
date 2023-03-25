@@ -9,7 +9,7 @@ export class RandomOffersListComponent implements OnInit {
   randomOffersList = [];
 
   ngOnInit() {
-    this.randomOffersList = this.getRandomOffers(4);
+    this.randomOffersList = this.getRandomOffers(8);
   }
 
   getRandomOffers(count: number): string[] {
