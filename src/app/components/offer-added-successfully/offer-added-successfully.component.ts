@@ -18,7 +18,6 @@ export class OfferAddedSuccessfullyComponent {
         clearInterval(redirectTime);
       }
       this.timeleft -= 1;
-      console.log(this.timeleft);
     }, 1000);
 
     setTimeout(() => {
