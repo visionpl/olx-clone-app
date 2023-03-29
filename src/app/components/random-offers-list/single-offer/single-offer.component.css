@@ -7,7 +7,7 @@
 .offer-box {
   background-color: var(--white);
   padding: 0.7rem;
-  border-radius: 3%;
+  border-radius: var(--default-radius);
   margin: 5px 0;
 }
 

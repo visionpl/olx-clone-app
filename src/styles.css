@@ -2,11 +2,9 @@
   --main-dark: #002f34;
   --main-light: #f2f4f5;
   --white: #ffffff;
+  --default-radius: 10px;
+  --red: #ff5636
 }
-
-/* * {
-  box-sizing: content-box;
-} */
 
 body {
   color: var(--main-dark);
@@ -26,6 +24,27 @@ body {
   color: var(--main-light);
 }
 
+.btn-secondary {
+  background-color: var(--main-dark);
+  color: var(--white);
+  border: 5px solid var(--main-dark);
+  font-weight: 600;
+}
+
+.btn-secondary:hover:not([disabled]) {
+  background-color: transparent;
+  border: 5px solid var(--main-dark);
+  color: var(--main-dark);
+}
+
 .background-dark {
   background-color: var(--main-dark);
+}
+
+.white-background-box {
+  background: var(--white);
+  border-radius: var(--default-radius);
+  padding: 2rem;
+  width: 100%;
+  margin-top: 1rem;
 }
