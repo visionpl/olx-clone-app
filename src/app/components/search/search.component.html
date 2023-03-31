@@ -2,7 +2,7 @@
     <form>
         <div class="form-row">
             <div class="form-group col-md-7">
-                <input type="text" class="form-search" id="searchInput" placeholder="Wyszukaj ofertę">
+                <input #searchInput type="text" class="form-search" id="searchInput" placeholder="Wyszukaj ofertę">
             </div>
             <div class="form-group col-md-3">
                 <select class="form-search">
@@ -11,7 +11,7 @@
                 </select>
             </div>
             <div class="form-group col-md-2">
-                <button type="button" class="btn btn-search">Szukaj</button>
+                <button (click)="onSubmitSearch(searchInput.value)" type="button" class="btn btn-search">Szukaj</button>
             </div>
         </div>
     </form>
