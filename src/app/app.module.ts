@@ -16,6 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SingleOfferComponent } from './components/random-offers-list/single-offer/single-offer.component';
 import { AddOfferComponent } from './components/add-offer/add-offer.component';
 import { OfferAddedSuccessfullyComponent } from './components/offer-added-successfully/offer-added-successfully.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { OfferAddedSuccessfullyComponent } from './components/offer-added-succes
     SingleOfferComponent,
     AddOfferComponent,
     OfferAddedSuccessfullyComponent,
+    SearchResultComponent,
   ],
   imports: [
     BrowserModule,
