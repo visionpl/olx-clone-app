@@ -1,7 +1,11 @@
 export interface OfferItem {
-  id: number;
-  name: string;
-  district: string;
+  id?: number;
+  offerName: string;
+  category: number;
+  description: string;
   price: number;
-  image: string;
+  state: number;
+  district: string;
+  phoneNumber: number;
+  image?: string;
 }
