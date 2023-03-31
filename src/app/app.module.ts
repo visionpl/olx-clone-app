@@ -17,6 +17,8 @@ import { SingleOfferComponent } from './components/random-offers-list/single-off
 import { AddOfferComponent } from './components/add-offer/add-offer.component';
 import { OfferAddedSuccessfullyComponent } from './components/offer-added-successfully/offer-added-successfully.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
+import { SearchOffersListComponent } from './components/search-result/search-offers-list/search-offers-list.component';
+import { SearchOfferItemComponent } from './components/search-result/search-offers-list/search-offer-item/search-offer-item.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { SearchResultComponent } from './components/search-result/search-result.
     AddOfferComponent,
     OfferAddedSuccessfullyComponent,
     SearchResultComponent,
+    SearchOffersListComponent,
+    SearchOfferItemComponent,
   ],
   imports: [
     BrowserModule,
