@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
@@ -8,4 +8,5 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 })
 export class SearchOfferItemComponent {
   faHeart = faHeart;
+  @Input() searchResult: any;
 }

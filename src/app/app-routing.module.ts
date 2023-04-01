@@ -16,9 +16,13 @@ const routes: Routes = [
     component: OfferAddedSuccessfullyComponent,
   },
   {
-    path: 'search/:query',
+    path: 'search',
     component: SearchResultComponent,
   },
+  // {
+  //   path: 'search/:query',
+  //   component: SearchResultComponent,
+  // },
 ];
 
 @NgModule({

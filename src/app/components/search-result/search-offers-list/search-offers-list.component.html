@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
-        <div class="offer-item">
-            <app-search-offer-item></app-search-offer-item>
+        <div class="offer-item" *ngFor="let result of results">
+            <app-search-offer-item [searchResult]="result"></app-search-offer-item>
         </div>
     </div>
 </div>
