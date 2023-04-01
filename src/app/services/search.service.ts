@@ -14,7 +14,6 @@ export class SearchService {
     this.results = data.filter((item) =>
       item.offerName.toLowerCase().includes(value.toLowerCase())
     );
-    // console.log(this.results);
   }
 
   getResults() {

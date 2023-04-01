@@ -1,7 +1,15 @@
 <div class="container">
     <div class="row">
-        <div class="offer-item" *ngFor="let result of results">
-            <app-search-offer-item [searchResult]="result"></app-search-offer-item>
-        </div>
+        <ng-container *ngIf="results.length > 0; else notFoundOffers">
+            <div class="offer-item" *ngFor="let result of results">
+                <app-search-offer-item [searchResult]="result"></app-search-offer-item>
+            </div>
+        </ng-container>
+        <ng-template #notFoundOffers>
+            <div class="col-lg-12 white-background-box text-center">
+                <h3>Przykro nam! Nie znaleziono żadnych ofert.</h3>
+                <p>Spróbój wyszukać inną frazę.</p>
+            </div>
+        </ng-template>
     </div>
 </div>
