@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
         <ng-container *ngIf="results.length > 0; else notFoundOffers">
+            <app-search-filters class="filters"></app-search-filters>
             <div class="offer-item" *ngFor="let result of results">
                 <app-search-offer-item [searchResult]="result"></app-search-offer-item>
             </div>

@@ -19,6 +19,7 @@ import { OfferAddedSuccessfullyComponent } from './components/offer-added-succes
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { SearchOffersListComponent } from './components/search-result/search-offers-list/search-offers-list.component';
 import { SearchOfferItemComponent } from './components/search-result/search-offers-list/search-offer-item/search-offer-item.component';
+import { SearchFiltersComponent } from './components/search-result/search-offers-list/search-filters/search-filters.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SearchOfferItemComponent } from './components/search-result/search-offe
     SearchResultComponent,
     SearchOffersListComponent,
     SearchOfferItemComponent,
+    SearchFiltersComponent,
   ],
   imports: [
     BrowserModule,
