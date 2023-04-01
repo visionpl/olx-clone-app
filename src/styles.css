@@ -3,7 +3,7 @@
   --main-light: #f2f4f5;
   --white: #ffffff;
   --default-radius: 10px;
-  --red: #ff5636
+  --red: #ff5636;
 }
 
 body {
@@ -47,4 +47,22 @@ body {
   padding: 2rem;
   width: 100%;
   margin-top: 1rem;
+}
+
+input.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid,
+textarea.ng-touched.ng-invalid {
+  background-clip: padding-box;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--main-light) var(--main-light) var(--red);
+}
+
+p.form-error {
+  font-size: 14px;
+  line-height: 18px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin: 0px;
+  color: var(--red);
 }
