@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { OfferItem } from 'src/app/interfaces/OfferItem';
 import { SearchService } from 'src/app/services/search.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { SearchService } from 'src/app/services/search.service';
   styleUrls: ['./search-offers-list.component.css'],
 })
 export class SearchOffersListComponent {
-  results: any[];
+  results: OfferItem[];
 
   constructor(private searchService: SearchService) {
     this.results = searchService.getResults();

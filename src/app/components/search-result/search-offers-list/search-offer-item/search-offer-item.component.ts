@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { OfferItem } from 'src/app/interfaces/OfferItem';
 
 @Component({
   selector: 'app-search-offer-item',
@@ -8,5 +9,5 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 })
 export class SearchOfferItemComponent {
   faHeart = faHeart;
-  @Input() searchResult: any;
+  @Input() searchResult: OfferItem;
 }

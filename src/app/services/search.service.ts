@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { OfferItem } from '../interfaces/OfferItem';
 
 @Injectable({
   providedIn: 'root',
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class SearchService {
   constructor() {}
 
-  results: any[];
+  results: OfferItem[];
 
   search(value: string) {
     const data = JSON.parse(localStorage.getItem('offers'));
