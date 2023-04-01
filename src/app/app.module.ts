@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,6 +21,14 @@ import { SearchOffersListComponent } from './components/search-result/search-off
 import { SearchOfferItemComponent } from './components/search-result/search-offers-list/search-offer-item/search-offer-item.component';
 import { SearchFiltersComponent } from './components/search-result/search-offers-list/search-filters/search-filters.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AddOffersToLocalstorageForTestService } from './services/add-offers-to-localstorage-for-test.service';
+
+export function addSampleOffersToLocalStorage(
+  addOffersToLocalstorageForTestService: AddOffersToLocalstorageForTestService
+) {
+  return () =>
+    addOffersToLocalstorageForTestService.addSampleOffersToLocalStorage();
+}
 
 @NgModule({
   declarations: [
@@ -49,7 +57,15 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     NgxPaginationModule,
   ],
-  providers: [],
+  providers: [
+    AddOffersToLocalstorageForTestService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: addSampleOffersToLocalStorage,
+      deps: [AddOffersToLocalstorageForTestService],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
