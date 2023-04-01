@@ -18,6 +18,12 @@ export class SearchComponent {
     search: new FormControl('', [Validators.required]),
   });
 
+  handleKeyUp(e) {
+    if (e.keyCode === 13) {
+      this.onSubmitSearch(e);
+    }
+  }
+
   onSubmitSearch(value: string) {
     if (this.searchForm.valid) {
       this.searchService.search(this.search);
