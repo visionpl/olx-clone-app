@@ -66,3 +66,9 @@ p.form-error {
   margin: 0px;
   color: var(--red);
 }
+
+.ngx-pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}

@@ -2,7 +2,7 @@
     <div class="row">
         <ng-container *ngIf="results.length > 0; else notFoundOffers">
             <app-search-filters class="filters"></app-search-filters>
-            <div class="offer-item" *ngFor="let result of results">
+            <div class="offer-item" *ngFor="let result of results | paginate: config">
                 <app-search-offer-item [searchResult]="result"></app-search-offer-item>
             </div>
         </ng-container>
@@ -12,5 +12,11 @@
                 <p>Spróbój wyszukać inną frazę.</p>
             </div>
         </ng-template>
+    </div>
+    <div class="row" *ngIf="results.length > 10">
+        <div class="col-12">
+            <pagination-controls [previousLabel]="labels.previousLabel" [nextLabel]="labels.nextLabel" [id]="config.id"
+                (pageChange)="config.currentPage = $event"></pagination-controls>
+        </div>
     </div>
 </div>
