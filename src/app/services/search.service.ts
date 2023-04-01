@@ -12,7 +12,7 @@ export class SearchService {
   search(value: string) {
     const data = JSON.parse(localStorage.getItem('offers'));
     this.results = data.filter((item) => item.offerName.includes(value));
-    console.log(this.results);
+    // console.log(this.results);
   }
 
   getResults() {
