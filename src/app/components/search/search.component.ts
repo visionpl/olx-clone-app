@@ -15,10 +15,14 @@ export class SearchComponent {
   districts = districtList;
 
   onSubmitSearch(value: string) {
-    // console.log(value);
-
-    // this.router.navigate([`search/${value}`]);
     this.searchService.search(this.search);
-    this.router.navigate([`search`]);
+    const currentUrl = this.router.url;
+    if (currentUrl === '/search') {
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/search']);
+      });
+    } else {
+      this.router.navigate(['/search']);
+    }
   }
 }
