@@ -11,7 +11,9 @@ export class SearchService {
 
   search(value: string) {
     const data = JSON.parse(localStorage.getItem('offers'));
-    this.results = data.filter((item) => item.offerName.includes(value));
+    this.results = data.filter((item) =>
+      item.offerName.toLowerCase().includes(value.toLowerCase())
+    );
     // console.log(this.results);
   }
 
