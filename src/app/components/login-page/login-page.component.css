@@ -6,13 +6,49 @@
 .login-box {
   background-color: #ffffff;
   border-radius: var(--default-radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 3vh;
 }
 
 .login-box div {
   width: 100vw;
   max-width: 400px;
+}
+
+.nav {
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.nav-tabs {
+  border-bottom: 0;
+}
+
+.nav-item {
+  flex: 1;
+}
+.nav-link {
+  padding-bottom: 20px;
+}
+
+.nav-tabs .nav-link:not(.active) {
+  border-bottom: 1px solid var(--main-dark);
+  width: calc(100% - 5px);
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: var(--main-dark);
+  border-bottom: 2px solid var(--main-dark);
+  width: calc(100% - 5px);
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.nav-tabs .nav-link {
+  border: 0;
 }
