@@ -46,13 +46,6 @@ img {
   font-weight: 700;
 }
 
-a.footer-links:link,
-:visited,
-:hover {
-  color: var(--main-dark);
-  text-decoration: none;
-}
-
 .details {
   width: 100%;
   display: grid;

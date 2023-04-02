@@ -22,10 +22,3 @@ img {
   font-weight: 500;
   font-size: 18px;
 }
-
-a.footer-links:link,
-:visited,
-:hover {
-  color: var(--main-dark);
-  text-decoration: none;
-}

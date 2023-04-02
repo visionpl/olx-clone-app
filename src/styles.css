@@ -80,3 +80,10 @@ p.form-error {
   color: var(--main-dark) !important;
   font-weight: 600;
 }
+
+a:link,
+:visited,
+:hover {
+  color: var(--main-dark);
+  text-decoration: none;
+}
