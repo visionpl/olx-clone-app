@@ -1,20 +1,59 @@
 <div class="d-flex align-items-center justify-content-center p-3 login-page">
     <div class="login-box">
-        <form>
-            <h2 class="mb-4">Zaloguj się</h2>
-            <div class="form-group">
-                <label for="inputEmail">Email</label>
-                <input type="email" class="form-control" name="email" #email>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#login" aria-selected="true">Zaloguj
+                    się</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#register" aria-selected="false">Załóż konto</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="home-tab">
+                <form>
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" name="email" #email>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword">Hasło</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn btn-dark form-control"
+                            (click)="onLogin(email.value)">Zaloguj</button>
+                        <hr>
+                        <small>Logując się, akceptujesz regulamin serwisu OLX.pl w jego aktualnym brzmieniu.</small>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="inputPassword">Hasło</label>
-                <input type="password" class="form-control" name="password">
+            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="profile-tab">
+                <form>
+                    <div class="form-group">
+                        <label for="inputName">Imię</label>
+                        <input type="text" class="form-control" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Nazwisko</label>
+                        <input type="text" class="form-control" name="surnamne">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword">Hasło</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn btn-dark form-control">Zarejestruj się</button>
+                        <hr>
+                        <small>Rejestrując konto, akceptujesz regulamin serwisu OLX.pl w jego aktualnym
+                            brzmieniu.</small>
+                    </div>
+                </form>
             </div>
-            <div class="text-center mt-5">
-                <button type="submit" class="btn btn-dark form-control" (click)="onLogin(email.value)">Zaloguj</button>
-                <hr>
-                <small>Logując się, akceptujesz regulamin serwisu OLX.pl w jego aktualnym brzmieniu.</small>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
