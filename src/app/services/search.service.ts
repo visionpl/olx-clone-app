@@ -10,9 +10,9 @@ export class SearchService {
   results: OfferItem[];
 
   search(value: string) {
-    const data = JSON.parse(localStorage.getItem('offers'));
-    this.results = data.filter((item) =>
-      item.offerName.toLowerCase().includes(value.toLowerCase())
+    const offersList = JSON.parse(localStorage.getItem('offers'));
+    this.results = offersList.filter((offer: OfferItem) =>
+      offer.offerName.toLowerCase().includes(value.toLowerCase())
     );
   }
 
