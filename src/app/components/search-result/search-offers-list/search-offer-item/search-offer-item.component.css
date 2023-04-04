@@ -1,0 +1,59 @@
+.offer-box {
+  background-color: var(--white);
+  padding: 0.7rem;
+  border-radius: var(--default-radius);
+  margin: 5px 0;
+  padding: 16px;
+}
+
+img {
+  object-fit: cover;
+  max-width: 200px;
+}
+
+.offer-box-title a {
+  display: flex;
+  justify-content: space-between;
+}
+
+.offer-box-title a span {
+  flex-basis: auto;
+}
+
+.offer-box-details {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.offer-box-details .detail {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.offer-box-details .fav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.offer-box-district {
+  font-size: 12px;
+}
+
+.offer-box-price {
+  font-weight: 700;
+}
+
+a.footer-links:link,
+:visited,
+:hover {
+  color: var(--main-dark);
+  text-decoration: none;
+}
+
+.details {
+  width: 100%;
+  display: grid;
+}
