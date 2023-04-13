@@ -16,6 +16,7 @@ export class SearchComponent {
 
   searchForm = new FormGroup({
     search: new FormControl('', [Validators.required]),
+    district: new FormControl(null),
   });
 
   handleKeyUp(e) {
@@ -24,9 +25,9 @@ export class SearchComponent {
     }
   }
 
-  onSubmitSearch(value: string) {
+  onSubmitSearch(value: any) {
     if (this.searchForm.valid) {
-      this.searchService.search(this.search);
+      this.searchService.search(this.searchForm.value);
       const currentUrl = this.router.url;
       if (currentUrl === '/search') {
         this.router
