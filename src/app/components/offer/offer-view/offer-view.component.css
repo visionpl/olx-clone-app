@@ -1,0 +1,81 @@
+.box-title {
+  display: flex;
+  font-weight: 600;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.parameters {
+  display: flex;
+  padding: 1rem 0;
+}
+
+.parameter-badge {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--main-dark);
+  border-radius: var(--default-radius);
+  margin-right: 0.5rem;
+}
+
+.description {
+  padding-top: 1rem;
+}
+
+.seller {
+  display: flex;
+}
+
+.avatar img {
+  max-height: 80px;
+  border-radius: 50%;
+  align-items: center;
+}
+
+.seller-info {
+  margin: 0 0.8rem;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.seller-info p {
+  color: var(--main-grey);
+  font-size: 0.8rem;
+}
+
+.seller-name {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.actions {
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.btn-call {
+  background-color: transparent;
+  color: var(--main-dark);
+  border: 3px solid var(--main-dark);
+  font-weight: 600;
+  width: 100%;
+}
+
+.btn-call:hover {
+  border: 5px solid var(--main-dark);
+}
+
+.localization {
+  display: flex;
+  justify-content: space-between;
+}
