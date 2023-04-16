@@ -2,8 +2,8 @@
     <form [formGroup]="searchForm" (ngSubmit)="onSubmitSearch(search)" (keyup)="handleKeyUp($event)">
         <div class=" form-row">
             <div class="form-group col-md-7">
-                <input [(ngModel)]="search" type="text" class="form-search" id="search" name="search"
-                    formControlName="search" placeholder="Wyszukaj ofertę">
+                <input type="text" class="form-search" id="search" name="search" formControlName="search"
+                    placeholder="Wyszukaj ofertę">
                 <p class="form-error" *ngIf="searchForm.get('search').hasError('required')">
                 </p>
             </div>

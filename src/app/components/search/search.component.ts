@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { districtList } from 'src/app/helpers/helper';
@@ -9,15 +9,14 @@ import { SearchService } from 'src/app/services/search.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
   constructor(private router: Router, private searchService: SearchService) {}
   search: string;
   districts = districtList;
 
-  searchForm = new FormGroup({
-    search: new FormControl('', [Validators.required]),
-    district: new FormControl(null),
-  });
+  @Input() searchQuery: any = '';
+
+  searchForm: FormGroup;
 
   handleKeyUp(e) {
     if (e.keyCode === 13) {
@@ -41,5 +40,12 @@ export class SearchComponent {
     } else {
       this.searchForm.markAllAsTouched();
     }
+  }
+
+  ngOnInit() {
+    this.searchForm = new FormGroup({
+      search: new FormControl(this.searchQuery[0], [Validators.required]),
+      district: new FormControl(this.searchQuery[1]),
+    });
   }
 }

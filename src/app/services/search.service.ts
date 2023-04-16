@@ -8,13 +8,18 @@ export class SearchService {
   constructor() {}
 
   results: OfferItem[];
+  searchValueForm: any;
+  searchDistrictForm: any;
 
   search(form: any) {
     const offersList = JSON.parse(localStorage.getItem('offers'));
 
     this.results = offersList.filter((offer: OfferItem) => {
       const searchValue = form.search.toLowerCase();
+      this.searchValueForm = searchValue;
+
       const districtValue = form.district;
+      this.searchDistrictForm = districtValue;
 
       if (districtValue) {
         return (
