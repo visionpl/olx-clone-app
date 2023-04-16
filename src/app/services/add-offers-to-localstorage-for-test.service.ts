@@ -9,10 +9,10 @@ export class AddOffersToLocalstorageForTestService {
   addSampleOffersToLocalStorage() {
     const offers = [
       {
-        offerName: 'Lorem ipsum dolor sit amet',
+        offerName: 'Oferta testowa 1',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
-        category: 7,
+        category: 1,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus in metus ultrices dignissim. Nullam nec magna ut justo sagittis commodo. Cras quis urna ac magna consectet',
         price: 256,
@@ -21,7 +21,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '111222333',
       },
       {
-        offerName: 'Vivamus auctor ipsum ante',
+        offerName: 'Oferta testowa 2',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
         category: 8,
@@ -33,7 +33,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '111222333',
       },
       {
-        offerName: 'Sed tincidunt suscipit facilisis',
+        offerName: 'Oferta testowa 3',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
         category: 1,
@@ -45,7 +45,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '888999777',
       },
       {
-        offerName: 'Pellentesque ut cursus magna, eget congue massa',
+        offerName: 'Oferta testowa 4',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
         category: 2,
@@ -57,7 +57,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '888777444',
       },
       {
-        offerName: 'Mauris rhoncus, libero nec pretium rutrum',
+        offerName: 'Oferta testowa 5',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
         category: 9,
@@ -69,7 +69,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '111222888',
       },
       {
-        offerName: 'Suspendisse ultricies quam sed nisl hendrerit',
+        offerName: 'Oferta testowa 6',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
         category: 8,
@@ -81,7 +81,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '000222333',
       },
       {
-        offerName: 'Sed sem erat, auctor a nulla non',
+        offerName: 'Oferta testowa 7',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
         category: 12,
@@ -93,7 +93,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '111222333',
       },
       {
-        offerName: 'Curabitur libero enim, rutrum',
+        offerName: 'Oferta testowa 8',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
         category: 4,
@@ -105,7 +105,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '666999888',
       },
       {
-        offerName: 'Ut gravida',
+        offerName: 'Oferta testowa 9',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
         category: 8,
@@ -117,7 +117,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '555444888',
       },
       {
-        offerName: 'Proin aliquam porta efficitur. Mauris ac ligula non sem',
+        offerName: 'Oferta testowa 10',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
         category: 10,
@@ -129,7 +129,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '666333999',
       },
       {
-        offerName: 'Aliquam erat volutpat',
+        offerName: 'Oferta testowa 11',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
         category: 5,
