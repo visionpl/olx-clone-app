@@ -22,6 +22,8 @@ import { SearchOfferItemComponent } from './components/search-result/search-offe
 import { SearchFiltersComponent } from './components/search-result/search-offers-list/search-filters/search-filters.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AddOffersToLocalstorageForTestService } from './services/add-offers-to-localstorage-for-test.service';
+import { OfferComponent } from './components/offer/offer.component';
+import { OfferViewComponent } from './components/offer/offer-view/offer-view.component';
 
 export function addSampleOffersToLocalStorage(
   addOffersToLocalstorageForTestService: AddOffersToLocalstorageForTestService
@@ -48,6 +50,8 @@ export function addSampleOffersToLocalStorage(
     SearchOffersListComponent,
     SearchOfferItemComponent,
     SearchFiltersComponent,
+    OfferComponent,
+    OfferViewComponent,
   ],
   imports: [
     BrowserModule,
