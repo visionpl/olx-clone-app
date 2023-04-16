@@ -42,6 +42,14 @@ export class SearchComponent implements OnInit {
     }
   }
 
+  clearSearch() {
+    this.searchForm.get('search').reset();
+  }
+
+  clearDistrict() {
+    this.searchForm.get('district').reset();
+  }
+
   ngOnInit() {
     this.searchForm = new FormGroup({
       search: new FormControl(this.searchQuery[0], [Validators.required]),
