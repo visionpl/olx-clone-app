@@ -9,6 +9,7 @@ export class AddOffersToLocalstorageForTestService {
   addSampleOffersToLocalStorage() {
     const offers = [
       {
+        id: 1,
         offerName: 'Oferta testowa 1',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -21,6 +22,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '111222333',
       },
       {
+        id: 2,
         offerName: 'Oferta testowa 2',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -33,6 +35,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '111222333',
       },
       {
+        id: 3,
         offerName: 'Oferta testowa 3',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -45,6 +48,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '888999777',
       },
       {
+        id: 4,
         offerName: 'Oferta testowa 4',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -57,6 +61,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '888777444',
       },
       {
+        id: 5,
         offerName: 'Oferta testowa 5',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -69,6 +74,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '111222888',
       },
       {
+        id: 6,
         offerName: 'Oferta testowa 6',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -81,6 +87,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '000222333',
       },
       {
+        id: 7,
         offerName: 'Oferta testowa 7',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -93,6 +100,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '111222333',
       },
       {
+        id: 8,
         offerName: 'Oferta testowa 8',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -105,6 +113,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '666999888',
       },
       {
+        id: 9,
         offerName: 'Oferta testowa 9',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -117,6 +126,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '555444888',
       },
       {
+        id: 10,
         offerName: 'Oferta testowa 10',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -129,6 +139,7 @@ export class AddOffersToLocalstorageForTestService {
         phoneNumber: '666333999',
       },
       {
+        id: 11,
         offerName: 'Oferta testowa 11',
         image:
           'https://images.pexels.com/photos/3232535/pexels-photo-3232535.jpeg?auto=compress&cs=tinysrgb&w=1600',
