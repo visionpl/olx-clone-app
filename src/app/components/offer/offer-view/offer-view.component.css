@@ -72,7 +72,7 @@
 }
 
 .btn-call:hover {
-  border: 5px solid var(--main-dark);
+  outline: 2px solid var(--main-dark);
 }
 
 .localization {
