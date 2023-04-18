@@ -4,6 +4,7 @@
   border-radius: var(--default-radius);
   margin: 5px;
   padding: 16px;
+  width: 100%;
 }
 
 .col-lg-3,
