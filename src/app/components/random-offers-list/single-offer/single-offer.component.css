@@ -6,6 +6,10 @@
 
 img {
   object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/11;
 }
 
 .offer-box-title {

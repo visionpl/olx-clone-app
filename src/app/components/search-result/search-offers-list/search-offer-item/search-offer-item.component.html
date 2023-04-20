@@ -1,14 +1,14 @@
 <div class="offer-box">
-    <a href="">
+    <a routerLink="/offer/{{ searchResult.id }}">
         <div class="d-flex">
             <div class="p-2">
                 <div class="offer-box-image">
-                    <a href=""><img class="img-fluid" [src]="searchResult.image" [alt]="searchResult.offerName"></a>
+                    <a routerLink="/offer/{{ searchResult.id }}"><img class="img-fluid" [src]="searchResult.image" [alt]="searchResult.offerName"></a>
                 </div>
             </div>
             <div class=" p-2 details">
                 <div class="offer-box-title">
-                    <a href="">
+                    <a routerLink="/offer/{{ searchResult.id }}">
                         <span>{{ searchResult.offerName }}</span>
                         <span class="offer-box-price">{{ searchResult.price }} zł</span>
                     </a>
@@ -16,11 +16,11 @@
                 <div class="offer-box-details">
                     <div class="detail">
                         <div class="offer-box-district">
-                            <a href=""><span>{{ searchResult.district }}</span></a>
+                            <a routerLink="/offer/{{ searchResult.id }}"><span>{{ searchResult.district }}</span></a>
                         </div>
                     </div>
                     <div class="detail">
-                        <a href="">
+                        <a routerLink="/offer/{{ searchResult.id }}">
                             <p class="fav-icon"><fa-icon [icon]="faHeart"></fa-icon></p>
                         </a>
                     </div>

@@ -4,7 +4,9 @@
   --white: #ffffff;
   --default-radius: 10px;
   --red: #ff5636;
+  --main-grey: #7f9799;
 }
+
 
 body {
   color: var(--main-dark);

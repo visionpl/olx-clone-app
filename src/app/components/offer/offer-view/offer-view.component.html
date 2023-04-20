@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="white-background-box">
+                <div id="gallery" class="carousel" data-interval="false">
+                    <ol class="carousel-indicators">
+                        <li data-target="#gallery" data-slide-to="0" class="active"></li>
+                        <li *ngFor="let image of offer.image.slice(1), index as i" data-target="#gallery"
+                            data-slide-to="{{i}}"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100"
+                                [src]="offer.image.length > 0 ? offer.image[0] : 'assets/no-photo.jpeg'">
+                        </div>
+                        <div class="carousel-item" *ngFor="let image of offer.image.slice(1)">
+                            <img class="d-block w-100" [src]="image">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#gallery" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#gallery" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="white-background-box">
+                <h1 class="title">{{offer.offerName}}</h1>
+                <h3 class="price">{{offer.price}} zł</h3>
+                <div class="parameters">
+                    <span class="parameter-badge">{{offer.state}}</span>
+                </div>
+                <div class="description">
+                    <h3 class="description-title">OPIS</h3>
+                    <p>{{offer.description}}</p>
+
+                </div>
+                <hr>
+                <small>ID: {{offer.id}}</small>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="white-background-box">
+                <p class="box-title">Sprzedający</p>
+                <div class="seller">
+                    <div class="avatar"><img src="assets/avatar.png"></div>
+                    <div class="seller-info">
+                        <div class="seller-name">User name</div>
+                        <p>Na portalu od 2020</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button a href="#" class="btn btn-call">Zadzwoń</button>
+                    <p class="pt-3"><a href="">Więcej od tego ogłoszeniodawcy</a></p>
+                </div>
+
+            </div>
+            <div class="white-background-box">
+                <p class="box-title">Lokalizacja</p>
+                <div class="localization">
+                    <div>{{offer.district}}</div>
+                    <div><img src="assets/example_map.svg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
