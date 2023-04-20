@@ -20,11 +20,11 @@ export class SearchComponent implements OnInit {
 
   handleKeyUp(e) {
     if (e.keyCode === 13) {
-      this.onSubmitSearch(e);
+      this.onSubmitSearch();
     }
   }
 
-  onSubmitSearch(value: any) {
+  onSubmitSearch() {
     if (this.searchForm.valid) {
       this.searchService.search(this.searchForm.value);
       const currentUrl = this.router.url;
