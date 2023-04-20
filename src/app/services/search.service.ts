@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { OfferItem } from '../interfaces/OfferItem';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -8,8 +9,8 @@ export class SearchService {
   constructor() {}
 
   results: OfferItem[];
-  searchValueForm: any;
-  searchDistrictForm: any;
+  searchValueForm: string;
+  searchDistrictForm: number;
 
   search(form: any) {
     const offersList = JSON.parse(localStorage.getItem('offers'));
