@@ -50,7 +50,7 @@ export class AddOfferComponent {
       ]),
       email: new FormControl({ value: this.emailLogin, disabled: true }),
     },
-    { updateOn: 'submit' }
+    { updateOn: 'blur' }
   );
 
   onAddOffer(form: any) {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { districtList } from 'src/app/helpers/helper';
@@ -9,24 +9,24 @@ import { SearchService } from 'src/app/services/search.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
   constructor(private router: Router, private searchService: SearchService) {}
   search: string;
   districts = districtList;
 
-  searchForm = new FormGroup({
-    search: new FormControl('', [Validators.required]),
-  });
+  @Input() searchQuery: any = '';
+
+  searchForm: FormGroup;
 
   handleKeyUp(e) {
     if (e.keyCode === 13) {
-      this.onSubmitSearch(e);
+      this.onSubmitSearch();
     }
   }
 
-  onSubmitSearch(value: string) {
+  onSubmitSearch() {
     if (this.searchForm.valid) {
-      this.searchService.search(this.search);
+      this.searchService.search(this.searchForm.value);
       const currentUrl = this.router.url;
       if (currentUrl === '/search') {
         this.router
@@ -40,5 +40,20 @@ export class SearchComponent {
     } else {
       this.searchForm.markAllAsTouched();
     }
+  }
+
+  clearSearch() {
+    this.searchForm.get('search').reset();
+  }
+
+  clearDistrict() {
+    this.searchForm.get('district').reset();
+  }
+
+  ngOnInit() {
+    this.searchForm = new FormGroup({
+      search: new FormControl(this.searchQuery[0], [Validators.required]),
+      district: new FormControl(this.searchQuery[1]),
+    });
   }
 }
