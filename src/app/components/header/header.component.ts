@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +10,12 @@ import { Component, Input } from '@angular/core';
 })
 export class HeaderComponent {
   emailLogin: string = localStorage.getItem('emailInput');
-  constructor() {}
+  constructor(private api: ApiService, private router: Router) {}
+
+  onSignOut() {
+    this.api.signOut().subscribe(() => {
+      localStorage.removeItem('emailInput');
+      this.router.navigate(['/']);
+    });
+  }
 }

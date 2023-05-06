@@ -21,4 +21,9 @@ export class ApiService {
     const body = { email, password };
     return this.http.post(url, body, { withCredentials: true });
   }
+
+  signOut() {
+    const url = `${this.apiUrl}/auth/signout`;
+    return this.http.get(url);
+  }
 }

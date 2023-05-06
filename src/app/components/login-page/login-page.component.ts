@@ -78,13 +78,13 @@ export class LoginPageComponent {
         () => {
           this.signUpSuccess = true;
           setTimeout(this.returnToLoginTab, 2500);
+          this.isError = false;
         },
         (error) => {
           this.isError = true;
           this.errorMessage = error.error.message;
         }
       );
-      console.log(credentials);
     }
     this.signUpForm.markAllAsTouched();
   }
