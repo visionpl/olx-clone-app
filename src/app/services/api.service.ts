@@ -11,7 +11,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   signIn(email: string, password: string) {
-    const url = `${this.apiUrl}/signin`;
+    const url = `${this.apiUrl}/auth/signin`;
     const body = { email, password };
     return this.http.post(url, body);
   }
