@@ -15,4 +15,10 @@ export class ApiService {
     const body = { email, password };
     return this.http.post(url, body, { withCredentials: true });
   }
+
+  signUp(email: string, password: string) {
+    const url = `${this.apiUrl}/auth/signup`;
+    const body = { email, password };
+    return this.http.post(url, body, { withCredentials: true });
+  }
 }

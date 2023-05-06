@@ -65,7 +65,7 @@ export class LoginPageComponent {
 
   onSignUp(credentials: any) {
     if (this.signUpForm.valid) {
-      this.api.signUn(credentials.email, credentials.password).subscribe(
+      this.api.signUp(credentials.email, credentials.password).subscribe(
         () => {
           // localStorage.setItem('emailInput', credentials.email);
           // this.router.navigate(['/']);
