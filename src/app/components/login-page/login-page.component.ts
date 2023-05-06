@@ -12,6 +12,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginPageComponent {
   constructor(private router: Router, private api: ApiService) {}
 
+  isError = false;
+
   signInForm = new FormGroup(
     {
       email: new FormControl('test@test.com', [
@@ -29,17 +31,21 @@ export class LoginPageComponent {
   onLogin(credentials: any) {
     if (this.signInForm.valid) {
       this.api.signIn(credentials.email, credentials.password).subscribe(
-        (response) => {
+        () => {
           localStorage.setItem('emailInput', credentials.email);
           this.router.navigate(['/']);
         },
         (error) => {
           console.error('error', error);
+          this.isError = true;
           this.signInForm.reset();
-          // api error
         }
       );
     }
     this.signInForm.markAllAsTouched();
+  }
+
+  hideError() {
+    this.isError = false;
   }
 }
