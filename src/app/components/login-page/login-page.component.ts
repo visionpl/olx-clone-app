@@ -12,8 +12,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginPageComponent {
   constructor(private router: Router, private api: ApiService) {}
 
-  isError = false;
-  signUpSuccess = false;
+  isError: boolean = false;
+  signUpSuccess: boolean = false;
+  errorMessage: string = '';
 
   signInForm = new FormGroup(
     {
@@ -37,8 +38,8 @@ export class LoginPageComponent {
           this.router.navigate(['/']);
         },
         (error) => {
-          console.error('error', error);
           this.isError = true;
+          this.errorMessage = error.error.message;
           this.signInForm.reset();
         }
       );
@@ -79,7 +80,8 @@ export class LoginPageComponent {
           setTimeout(this.returnToLoginTab, 2500);
         },
         (error) => {
-          console.error('error', error);
+          this.isError = true;
+          this.errorMessage = error.error.message;
         }
       );
       console.log(credentials);
