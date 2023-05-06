@@ -13,6 +13,7 @@ export class LoginPageComponent {
   constructor(private router: Router, private api: ApiService) {}
 
   isError = false;
+  signUpSuccess = false;
 
   signInForm = new FormGroup(
     {
@@ -63,18 +64,22 @@ export class LoginPageComponent {
     { updateOn: 'blur' }
   );
 
+  returnToLoginTab() {
+    const loginTabAnchor = document.querySelector(
+      '#myTab li:first-child a'
+    ) as HTMLElement;
+    loginTabAnchor.click();
+  }
+
   onSignUp(credentials: any) {
     if (this.signUpForm.valid) {
       this.api.signUp(credentials.email, credentials.password).subscribe(
         () => {
-          // localStorage.setItem('emailInput', credentials.email);
-          // this.router.navigate(['/']);
-          console.log('ok');
+          this.signUpSuccess = true;
+          setTimeout(this.returnToLoginTab, 2500);
         },
         (error) => {
           console.error('error', error);
-          // this.isError = true;
-          // this.signInForm.reset();
         }
       );
       console.log(credentials);
