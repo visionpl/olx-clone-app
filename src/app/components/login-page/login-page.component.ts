@@ -48,4 +48,37 @@ export class LoginPageComponent {
   hideError() {
     this.isError = false;
   }
+
+  signUpForm = new FormGroup(
+    {
+      email: new FormControl('test3@test.com', [
+        Validators.required,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+      ]),
+      password: new FormControl('123', [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+    },
+    { updateOn: 'blur' }
+  );
+
+  onSignUp(credentials: any) {
+    if (this.signUpForm.valid) {
+      this.api.signUn(credentials.email, credentials.password).subscribe(
+        () => {
+          // localStorage.setItem('emailInput', credentials.email);
+          // this.router.navigate(['/']);
+          console.log('ok');
+        },
+        (error) => {
+          console.error('error', error);
+          // this.isError = true;
+          // this.signInForm.reset();
+        }
+      );
+      console.log(credentials);
+    }
+    this.signUpForm.markAllAsTouched();
+  }
 }
