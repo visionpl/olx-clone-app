@@ -20,7 +20,7 @@
                         <div class="dropdown-item-logged-user">Zalogowano jako: <strong>{{emailLogin}} </strong>
                         </div>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" routerLink="/account">Wyloguj</a>
+                        <a class="dropdown-item" (click)="onSignOut()" href="">Wyloguj</a>
                     </div>
                 </li>
                 <li class="nav-item">

@@ -24,6 +24,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AddOffersToLocalstorageForTestService } from './services/add-offers-to-localstorage-for-test.service';
 import { OfferComponent } from './components/offer/offer.component';
 import { OfferViewComponent } from './components/offer/offer-view/offer-view.component';
+import { HttpClientModule } from '@angular/common/http';
 
 export function addSampleOffersToLocalStorage(
   addOffersToLocalstorageForTestService: AddOffersToLocalstorageForTestService
@@ -60,6 +61,7 @@ export function addSampleOffersToLocalStorage(
     FontAwesomeModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    HttpClientModule,
   ],
   providers: [
     AddOffersToLocalstorageForTestService,

@@ -2,8 +2,7 @@
     <div class="login-box">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#login" aria-selected="true">Zaloguj
-                    się</a>
+                <a class="nav-link active" data-toggle="tab" href="#login" aria-selected="true">Zaloguj się</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#register" aria-selected="false">Załóż konto</a>
@@ -11,25 +10,36 @@
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="home-tab">
-                <form>
+                <form [formGroup]="signInForm" (ngSubmit)="onLogin(signInForm.value)">
+                    <div class="alert alert-danger" role="alert" [hidden]="!isError">
+                        <button type="button" class="close" aria-label="Close" (click)="hideError()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ errorMessage }}
+                    </div>
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" name="email" #email>
+                        <input type="email" class="form-control" name="email" [email]="true" formControlName="email">
                     </div>
                     <div class="form-group">
                         <label for="inputPassword">Hasło</label>
-                        <input type="password" class="form-control" name="password">
+                        <input type="password" class="form-control" name="password" formControlName="password">
                     </div>
                     <div class="text-center mt-5">
-                        <button type="submit" class="btn btn-dark form-control"
-                            (click)="onLogin(email.value)">Zaloguj</button>
+                        <button type="submit" class="btn btn-dark form-control">Zaloguj</button>
                         <hr>
                         <small>Logując się, akceptujesz regulamin serwisu OLX.pl w jego aktualnym brzmieniu.</small>
                     </div>
                 </form>
             </div>
             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="profile-tab">
-                <form>
+                <form [formGroup]="signUpForm" (ngSubmit)="onSignUp(signUpForm.value)" [hidden]="signUpSuccess">
+                    <div class="alert alert-danger" role="alert" [hidden]="!isError">
+                        <button type="button" class="close" aria-label="Close" (click)="hideError()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ errorMessage }}
+                    </div>
                     <div class="form-group">
                         <label for="inputName">Imię</label>
                         <input type="text" class="form-control" name="name">
@@ -40,11 +50,11 @@
                     </div>
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" name="email">
+                        <input type="email" class="form-control" name="email" formControlName="email">
                     </div>
                     <div class="form-group">
                         <label for="inputPassword">Hasło</label>
-                        <input type="password" class="form-control" name="password">
+                        <input type="password" class="form-control" name="password" formControlName="password">
                     </div>
                     <div class="text-center mt-5">
                         <button type="submit" class="btn btn-dark form-control">Zarejestruj się</button>
@@ -53,6 +63,8 @@
                             brzmieniu.</small>
                     </div>
                 </form>
+                <h3 class="pt-5 pb-5 text-center" [hidden]="!signUpSuccess">Rejestracja przebiegła pomyślnie! Zaloguj
+                    się.</h3>
             </div>
         </div>
     </div>
