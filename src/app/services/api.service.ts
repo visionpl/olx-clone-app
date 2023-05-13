@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environment';
 
 @Injectable({
@@ -23,7 +23,14 @@ export class ApiService {
   }
 
   signOut() {
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      withCredentials: true,
+    };
+
     const url = `${this.apiUrl}/auth/signout`;
-    return this.http.get(url);
+    return this.http.get(url, options);
   }
 }
