@@ -33,4 +33,19 @@ export class ApiService {
     const url = `${this.apiUrl}/auth/signout`;
     return this.http.get(url, options);
   }
+
+  addOffer(form: any) {
+    const url = `${this.apiUrl}/offer/add`;
+    const body = {
+      offerName: form.offerName,
+      description: form.description,
+      price: form.form.email,
+      categoryId: form.category,
+      districtId: form.district,
+      conditionId: form.state,
+      phoneNumber: form.phoneNumber,
+    };
+    console.log(form);
+    return this.http.post(url, body, { withCredentials: true });
+  }
 }

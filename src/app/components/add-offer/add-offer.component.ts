@@ -9,6 +9,7 @@ import {
   MAX_DESCRIPTION_LENGHT,
   MIN_VALUE_PRICE,
 } from 'src/app/helpers/helper';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-add-offer',
@@ -16,7 +17,7 @@ import {
   styleUrls: ['./add-offer.component.css'],
 })
 export class AddOfferComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private api: ApiService) {}
 
   minDescriptionLength = MIN_DESCRIPTION_LENGHT;
   maxDescriptionLength = MAX_DESCRIPTION_LENGHT;
@@ -55,17 +56,15 @@ export class AddOfferComponent {
 
   onAddOffer(form: any) {
     if (this.form.valid) {
-      let offersArray;
-      offersArray = JSON.parse(localStorage.getItem('offers'));
-
-      if (offersArray == null) {
-        offersArray = [];
-      }
-
-      offersArray.push(form);
-      localStorage.setItem('offers', JSON.stringify(offersArray));
-
-      this.router.navigate(['offer-added-successfully']);
+      this.api.addOffer(form).subscribe(() => {
+        this.router.navigate(['offer-added-successfully']);
+      }),
+        (error) => {
+          console.error(error);
+          // this.isError = true;
+          // this.errorMessage = error.error.message;
+          // this.signInForm.reset();
+        };
     } else {
       this.form.markAllAsTouched();
     }
