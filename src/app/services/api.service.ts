@@ -39,13 +39,13 @@ export class ApiService {
     const body = {
       offerName: form.offerName,
       description: form.description,
-      price: form.form.email,
+      price: form.price,
+      userEmail: localStorage.getItem('userEmail'),
       categoryId: form.category,
       districtId: form.district,
       conditionId: form.state,
       phoneNumber: form.phoneNumber,
     };
-    console.log(form);
     return this.http.post(url, body, { withCredentials: true });
   }
 }
