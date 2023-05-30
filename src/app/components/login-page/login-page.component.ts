@@ -34,7 +34,7 @@ export class LoginPageComponent {
     if (this.signInForm.valid) {
       this.api.signIn(credentials.email, credentials.password).subscribe(
         () => {
-          localStorage.setItem('emailInput', credentials.email);
+          localStorage.setItem('userEmail', credentials.email);
           this.router.navigate(['/']);
         },
         (error) => {

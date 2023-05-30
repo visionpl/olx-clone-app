@@ -22,7 +22,7 @@ export class AddOfferComponent {
   minDescriptionLength = MIN_DESCRIPTION_LENGHT;
   maxDescriptionLength = MAX_DESCRIPTION_LENGHT;
 
-  emailLogin: string = localStorage.getItem('emailInput');
+  emailLogin: string = localStorage.getItem('userEmail');
   categoryList = categoriesList;
   districtList = districtList;
   stateList = offerState;
