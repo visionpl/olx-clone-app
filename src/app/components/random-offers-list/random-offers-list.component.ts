@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-random-offers-list',
@@ -6,23 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./random-offers-list.component.css'],
 })
 export class RandomOffersListComponent implements OnInit {
+  constructor(private api: ApiService) {}
   randomOffersList = [];
 
   ngOnInit() {
-    const randomOffers = JSON.parse(localStorage.getItem('offers'));
-    const count = Math.min(8, randomOffers.length);
-    this.randomOffersList = this.getRandomOffers(count, randomOffers);
-  }
-
-  getRandomOffers(count: number, offers: string[]): string[] {
-    const randomIndexes = [];
-    for (let i = 0; i < count; i++) {
-      let randomIndex = Math.floor(Math.random() * offers.length);
-      while (randomIndexes.includes(randomIndex)) {
-        randomIndex = Math.floor(Math.random() * offers.length);
-      }
-      randomIndexes.push(randomIndex);
-    }
-    return randomIndexes.map((index) => offers[index]);
+    this.api.getRandomOffers(8).subscribe((data: any[]) => {
+      this.randomOffersList = data;
+    });
   }
 }

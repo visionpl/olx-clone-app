@@ -48,4 +48,9 @@ export class ApiService {
     };
     return this.http.post(url, body, { withCredentials: true });
   }
+
+  getRandomOffers(quantity: any) {
+    const url = `${this.apiUrl}/offer/random?q=${quantity}`;
+    return this.http.get(url, { withCredentials: true });
+  }
 }
